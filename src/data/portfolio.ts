@@ -104,6 +104,8 @@ export interface Project {
   image?: string;
   /** Additional screenshots shown in the card carousel (optional) */
   screenshots?: string[];
+  /** Use object-contain instead of object-cover for the primary image */
+  imageContain?: boolean;
   featured?: boolean;
 }
 
@@ -141,13 +143,8 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/Mann-ck/Resume-Pilot',
     liveUrl: 'https://resumepilot-silk.vercel.app/',
     image: '/resumepilot-showcase.png',
-    screenshots: [
-      '/resumepilot-showcase.png',
-      '/resumepilot-hero.png',
-      '/resumepilot-score.png',
-      '/resumepilot-breakdown.png',
-      '/resumepilot-rewrites.png',
-    ],
+    imageContain: true,
+    // No screenshots array — show only the showcase image, uncropped
     featured: true,
   },
 ];

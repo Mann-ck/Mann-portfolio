@@ -218,7 +218,8 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
               <img
                 src={project.image}
                 alt={`${project.title} screenshot`}
-                className="h-full w-full object-cover"
+                className={`w-full h-full ${project.imageContain ? 'object-contain' : 'object-cover'}`}
+                style={project.imageContain ? { background: '#0C0C0C' } : undefined}
                 loading="lazy"
                 draggable={false}
               />
