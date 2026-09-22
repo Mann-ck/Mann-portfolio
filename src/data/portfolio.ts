@@ -100,7 +100,10 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   videoUrl?: string;
+  /** Primary preview image — path relative to /public */
   image?: string;
+  /** Additional screenshots shown in the card carousel (optional) */
+  screenshots?: string[];
   featured?: boolean;
 }
 
@@ -127,6 +130,24 @@ export const PROJECTS: Project[] = [
     // liveUrl: undefined  — no live demo yet
     // videoUrl: undefined — no demo video yet
     // image: undefined    — no screenshot yet
+    featured: true,
+  },
+  {
+    title: 'ResumePilot',
+    description:
+      'AI-powered resume reviewer that analyzes resumes and provides scores, strengths, weaknesses, missing sections, and improved bullet points.',
+    category: 'Personal · GenAI',
+    technologies: ['React', 'TypeScript', 'Vite', 'Groq', 'AI', 'PDF Parsing'],
+    githubUrl: 'https://github.com/Mann-ck/Resume-Pilot',
+    liveUrl: 'https://resumepilot-silk.vercel.app/',
+    image: '/resumepilot-showcase.png',
+    screenshots: [
+      '/resumepilot-showcase.png',
+      '/resumepilot-hero.png',
+      '/resumepilot-score.png',
+      '/resumepilot-breakdown.png',
+      '/resumepilot-rewrites.png',
+    ],
     featured: true,
   },
 ];

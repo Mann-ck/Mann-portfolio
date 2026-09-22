@@ -54,21 +54,40 @@ const AboutSection = () => {
           </div>
         </FadeIn>
 
-        {/* CTA */}
+        {/* CTAs */}
         <FadeIn delay={0.2} y={20}>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-full px-10 py-3.5 sm:px-12 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-widest text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-            style={{
-              background:
-                'linear-gradient(135deg, #1a0a2e 0%, #6c21b0 45%, #4a1a80 75%, #8b3a00 100%)',
-              boxShadow: '0 4px 20px rgba(108, 33, 176, 0.3)',
-              outline: '1.5px solid rgba(255,255,255,0.2)',
-              outlineOffset: '-1.5px',
-            }}
-          >
-            Get in Touch
-          </a>
+          {/* Mobile: full-width stacked pair, capped at 320px so they never
+              touch screen edges even on a 320px phone.
+              sm+: revert to auto-width side-by-side — desktop unchanged. */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-4 w-full sm:w-auto">
+
+            {/* Get in Touch — unchanged on desktop */}
+            <a
+              href="#contact"
+              className="w-full sm:w-auto max-w-xs sm:max-w-none inline-flex items-center justify-center rounded-full px-10 py-4 sm:px-12 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-widest text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              style={{
+                background:
+                  'linear-gradient(135deg, #1a0a2e 0%, #6c21b0 45%, #4a1a80 75%, #8b3a00 100%)',
+                boxShadow: '0 4px 20px rgba(108, 33, 176, 0.3)',
+                outline: '1.5px solid rgba(255,255,255,0.2)',
+                outlineOffset: '-1.5px',
+              }}
+            >
+              Get in Touch
+            </a>
+
+            {/* View Resume — white bg, black text */}
+            <a
+              href="/MannBasicResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto max-w-xs sm:max-w-none inline-flex items-center justify-center rounded-full px-10 py-4 sm:px-12 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-widest text-black transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              style={{ background: '#ffffff' }}
+            >
+              View Resume
+            </a>
+
+          </div>
         </FadeIn>
 
       </div>

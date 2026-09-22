@@ -22,13 +22,17 @@ body,
 body {
   min-height: 100vh;
   color: #d7e2ea;
-  overflow-x: hidden;
+  /* overflow-x: hidden breaks position:sticky on all descendants.
+     Use clip-path or rely on max-width instead.
+     Horizontal overflow is contained via #root max-width below. */
 }
 
-/* Prevent any child from creating horizontal scroll */
+/* #root: do NOT use overflow-x: hidden — it breaks position:sticky.
+   Contain horizontal overflow with max-width + clip instead. */
 #root {
-  overflow-x: hidden;
   max-width: 100vw;
+  /* overflow: clip on X only works on a non-scroll container but
+     still breaks sticky in some browsers. Use width containment only. */
 }
 
 .hero-heading {

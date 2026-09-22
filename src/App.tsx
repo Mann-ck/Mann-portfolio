@@ -8,7 +8,7 @@ const App = () => {
   return (
     <main
       className="relative w-full"
-      style={{ overflowX: 'clip', background: '#0C0C0C' }}
+      style={{ background: '#0C0C0C', maxWidth: '100vw' }}
     >
       <HeroSection />
       <AboutSection />
